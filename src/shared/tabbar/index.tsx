@@ -18,8 +18,9 @@ export const AppTabBar = ({
         flexDirection="row"
         justifyContent="space-around"
         padding={15}
-        borderTopLeftRadius={AppStyles.borderRadius + 10}
-        borderTopRightRadius={AppStyles.borderRadius + 10}
+        paddingBottom={25}
+        borderTopLeftRadius={AppStyles.borderRadius + 20}
+        borderTopRightRadius={AppStyles.borderRadius + 20}
         backgroundColor={Colors.primaryRegular}>
         {state.routes.map((route, index) => {
           const {

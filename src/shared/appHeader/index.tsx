@@ -1,18 +1,23 @@
 import React, { FC } from 'react';
 import { BottomTabHeaderProps } from '@react-navigation/bottom-tabs';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 import { View, Text } from '../flexbox';
 import { Colors } from '../../config/colors';
-import Icon from 'react-native-vector-icons/FontAwesome5';
 import { AppStyles } from '../../config/appStyles';
 import ArrowIcon from '../../assets/icons/arrow.icon.svg';
 
 export const AppHeader: FC<BottomTabHeaderProps> = () => {
+  const { top } = useSafeAreaInsets();
   return (
     <View
       backgroundColor={Colors.primaryLight}
       flexDirection="row"
       alignContent="center"
-      paddingVertical={25}
+      paddingTop={top + 25}
+      paddingBottom={15}
+      borderBottomWidth={1}
+      borderBottomColor={Colors.primaryDark}
       paddingHorizontal={AppStyles.containerPadding}>
       <View>
         <Icon name="user-circle" size={34} color={Colors.orangeRegular} />

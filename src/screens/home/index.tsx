@@ -51,6 +51,7 @@ export const HomeScreen = () => {
       <SectionList
         sections={sectinos}
         keyExtractor={(_, index) => String(index)}
+        stickySectionHeadersEnabled={false}
         renderSectionHeader={({ section: { type } }) => {
           switch (type) {
             case SecionsType.search:

@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import dayjs from 'dayjs';
 import { AppStyles } from '../../../config/appStyles';
 import { Colors } from '../../../config/colors';
 import { View, Text } from '../../../shared/flexbox';
@@ -35,7 +36,7 @@ const mockChartData = [
   },
 ];
 const getChartMonth = (date: Date) => {
-  return date.toLocaleString('en-US', { month: 'short' });
+  return dayjs(date).format('MMM');
 };
 export const ChartComponent = () => {
   const chartMonthHeight = useRef(Measures.getHeightPercantage(0.2));
@@ -54,8 +55,8 @@ export const ChartComponent = () => {
       borderRadius={AppStyles.borderRadius}
       elevation={4}
       shadowColor="#000"
-      shadowOffset={{ width: 0, height: 1 }}
-      shadowOpacity={0.8}
+      shadowOffset={{ width: 0.5, height: 0.5 }}
+      shadowOpacity={0.3}
       shadowRadius={2}>
       {mockChartData.map((item, index) => (
         <View key={`${item.date.valueOf()}/${index}`} alignItems="center">
