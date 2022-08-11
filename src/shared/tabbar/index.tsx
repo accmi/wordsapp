@@ -5,7 +5,7 @@ import { StyleSheet, TouchableOpacity } from 'react-native';
 import { Colors } from '../../config/colors';
 import { AppStyles } from '../../config/appStyles';
 
-const iconSize = 28;
+const iconSize = 20;
 
 export const AppTabBar = ({
   descriptors,
@@ -88,7 +88,6 @@ export const AppTabBar = ({
 
 const style = StyleSheet.create({
   tabContainer: {
-    // backgroundColor: Colors.tint,
     padding: 10,
     borderRadius: iconSize + 10,
   },

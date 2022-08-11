@@ -4,6 +4,7 @@ import { View, Text } from '../flexbox';
 import { Colors } from '../../config/colors';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { AppStyles } from '../../config/appStyles';
+import ArrowIcon from '../../assets/icons/arrow.icon.svg';
 
 export const AppHeader: FC<BottomTabHeaderProps> = () => {
   return (
@@ -21,7 +22,7 @@ export const AppHeader: FC<BottomTabHeaderProps> = () => {
         <View flexDirection="row" alignItems="center">
           <Text {...AppStyles.getHeadline(Colors.white, 2)}>Alice Smith</Text>
           <View flexBasis={'2%'} />
-          <Icon name="caret-square-right" size={16} color={Colors.white} />
+          <ArrowIcon width={10} height={10} />
         </View>
         <Text color={Colors.white}>Keep up good work!</Text>
       </View>

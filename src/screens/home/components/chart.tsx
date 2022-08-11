@@ -42,6 +42,7 @@ export const ChartComponent = () => {
   const chartMonthWidth = useRef(Measures.getWidthPercantage(0.05));
   const getCmpletionHigh = (complition: number) =>
     (chartMonthHeight.current * complition) / 100;
+
   return (
     <View
       flexDirection="row"
@@ -51,7 +52,11 @@ export const ChartComponent = () => {
       justifyContent="space-between"
       backgroundColor={Colors.primaryRegular}
       borderRadius={AppStyles.borderRadius}
-      elevation={4}>
+      elevation={4}
+      shadowColor="#000"
+      shadowOffset={{ width: 0, height: 1 }}
+      shadowOpacity={0.8}
+      shadowRadius={2}>
       {mockChartData.map((item, index) => (
         <View key={`${item.date.valueOf()}/${index}`} alignItems="center">
           <View

@@ -7,6 +7,7 @@ import { NavigationConfig } from './config/navigation';
 import { HomeScreen, ProfileScreen, CollectionsScreen } from './screens';
 import { AppTabBar } from './shared/tabbar';
 import { AppHeader } from './shared/appHeader';
+import HomeIcon from './assets/icons/home.icon.svg';
 
 const {
   Screen: { HOME, PROFILE, COLLECTIONS },
@@ -26,7 +27,7 @@ export const App = () => {
           options={{
             tabBarActiveTintColor: Colors.tint,
             tabBarIcon: ({ color, size }) => (
-              <Icon name="home" color={color} size={size} />
+              <HomeIcon width={size} height={size} style={{ color: color }} />
             ),
             tabBarShowLabel: false,
             header: props => <AppHeader {...props} />,
