@@ -11,6 +11,7 @@ import { AppStyles } from '../../config/appStyles';
 import { Colors } from '../../config/colors';
 import { Text, View } from '../../shared';
 import { TrainingItem } from './components/trainingItem';
+import { ChartComponent } from './components/chart';
 import { mockTraining } from './mockData/trainings';
 
 type trainigType = typeof mockTraining[0];
@@ -55,7 +56,15 @@ export const HomeScreen = () => {
             case SecionsType.search:
               return null;
             case SecionsType.chart:
-              return null;
+              return (
+                <View
+                  marginTop={55}
+                  marginHorizontal={AppStyles.containerPadding}>
+                  <Text {...AppStyles.getHeadline(Colors.white, 1)}>
+                    Progress
+                  </Text>
+                </View>
+              );
             case SecionsType.training:
               return (
                 <View
@@ -96,7 +105,7 @@ export const HomeScreen = () => {
                 />
               );
             case SecionsType.chart:
-              return null;
+              return <ChartComponent />;
           }
         }}
       />
