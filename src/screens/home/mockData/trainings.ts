@@ -38,3 +38,5 @@ export const mockTraining = [
     color: Colors.tint,
   },
 ];
+
+export type Traning = typeof mockTraining[0];

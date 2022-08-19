@@ -19,7 +19,11 @@ const Tab = createBottomTabNavigator();
 export const App = () => {
   return (
     <>
-      <StatusBar barStyle="light-content" translucent />
+      <StatusBar
+        barStyle="light-content"
+        translucent
+        backgroundColor={Colors.primaryLight}
+      />
       <NavigationContainer>
         <Tab.Navigator
           tabBar={props => <AppTabBar {...props} />}

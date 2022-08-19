@@ -1,14 +1,29 @@
 import React from 'react';
-import { AppStyles } from '../../config/appStyles';
-import { Colors } from '../../config/colors';
-import { Text, View } from '../../shared/flexbox';
+import { FlatList } from 'react-native';
+import { CollectionItem } from './components';
+// import { AppStyles } from '../../config/appStyles';
+// import { Colors } from '../../config/colors';
+// import { Text, View } from '../../shared/flexbox';
+
+const mockedCollections = [
+  {
+    id: '0',
+    title: 'How I met your mother',
+    numberOfWords: 20,
+    progress: 0.5,
+  },
+];
 
 export const CollectionsScreen = () => (
-  <View
-    backgroundColor={Colors.primaryLight}
-    flex={1}
-    justifyContent="center"
-    alignItems="center">
-    <Text {...AppStyles.getHeadline(Colors.white, 1)}>Collection Screen</Text>
-  </View>
+  <FlatList
+    data={mockedCollections}
+    keyExtractor={item => item.id}
+    renderItem={({ item: { title, numberOfWords, progress } }) => (
+      <CollectionItem
+        title={title}
+        numberOfWords={numberOfWords}
+        progress={progress}
+      />
+    )}
+  />
 );
