@@ -1,20 +1,20 @@
-export class Colors {
-  static white = 'white';
-  static gray = '#96A7AF';
+export const appColors = {
+  white: 'white',
+  gray: '#96A7AF',
 
-  static primaryRegular = '#30444E';
-  static primaryLight = '#22343C';
-  static primaryDark = '#1A282F';
+  primaryRegular: '#30444E',
+  primaryLight: '#22343C',
+  primaryDark: '#1A282F',
 
-  static tint = '#3DD598';
-  static tintDark = '#286053';
-  static tintLight = '#3DD598';
+  tint: '#3DD598',
+  tintDark: '#286053',
+  tintLight: '#3DD598',
 
-  static redRegular = '#FF565E';
-  static redDark = '#623A42';
-  static redLight = '#FF565E';
+  redRegular: '#FF565E',
+  redDark: '#623A42',
+  redLight: '#FF565E',
 
-  static orangeRegular = '#FFC542';
-  static orangeDark = '#625B39';
-  static orangeLite = '#FFC542';
-}
+  orangeRegular: '#FFC542',
+  orangeDark: '#625B39',
+  orangeLite: '#FFC542',
+};

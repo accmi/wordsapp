@@ -2,8 +2,7 @@ import React from 'react';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { View } from '../flexbox/index';
 import { StyleSheet, TouchableOpacity } from 'react-native';
-import { Colors } from '../../config/colors';
-import { AppStyles } from '../../config/appStyles';
+import { appColors, appStylesMeasures } from '~config';
 
 const iconSize = 20;
 
@@ -13,15 +12,15 @@ export const AppTabBar = ({
   navigation,
 }: BottomTabBarProps) => {
   return (
-    <View backgroundColor={Colors.primaryLight}>
+    <View backgroundColor={appColors.primaryLight}>
       <View
         flexDirection="row"
         justifyContent="space-around"
         padding={15}
         paddingBottom={25}
-        borderTopLeftRadius={AppStyles.borderRadius + 20}
-        borderTopRightRadius={AppStyles.borderRadius + 20}
-        backgroundColor={Colors.primaryRegular}>
+        borderTopLeftRadius={appStylesMeasures.borderRadius + 20}
+        borderTopRightRadius={appStylesMeasures.borderRadius + 20}
+        backgroundColor={appColors.primaryRegular}>
         {state.routes.map((route, index) => {
           const {
             options: {
@@ -58,7 +57,7 @@ export const AppTabBar = ({
             });
           };
 
-          const iconColor = isFocused ? Colors.white : Colors.gray;
+          const iconColor = isFocused ? appColors.white : appColors.gray;
 
           return (
             <TouchableOpacity

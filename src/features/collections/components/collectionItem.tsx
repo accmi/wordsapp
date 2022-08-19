@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { View } from '../../../shared';
+import { View } from '~shared';
 
 type Props = {
   title: string;

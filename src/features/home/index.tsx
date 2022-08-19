@@ -7,9 +7,13 @@ import {
   StyleSheet,
   TextInput,
 } from 'react-native';
-import { AppStyles } from '../../config/appStyles';
-import { Colors } from '../../config/colors';
-import { Text, View } from '../../shared';
+import {
+  appStyles,
+  appStylesMeasures,
+  appInputStyle,
+  appColors,
+} from '~config';
+import { Text, View } from '~shared';
 import { TrainingItem } from './components/trainingItem';
 import { ChartComponent } from './components/chart';
 import { mockTraining } from './mockData/trainings';
@@ -60,8 +64,8 @@ export const HomeScreen = () => {
               return (
                 <View
                   marginTop={55}
-                  marginHorizontal={AppStyles.containerPadding}>
-                  <Text {...AppStyles.getHeadline(Colors.white, 1)}>
+                  marginHorizontal={appStylesMeasures.containerPadding}>
+                  <Text color={appColors.white} fontSize={appStyles.h1}>
                     Progress
                   </Text>
                 </View>
@@ -70,8 +74,8 @@ export const HomeScreen = () => {
               return (
                 <View
                   marginTop={55}
-                  marginHorizontal={AppStyles.containerPadding}>
-                  <Text {...AppStyles.getHeadline(Colors.white, 1)}>
+                  marginHorizontal={appStylesMeasures.containerPadding}>
+                  <Text color={appColors.white} fontSize={appStyles.h1}>
                     Training
                   </Text>
                 </View>
@@ -88,8 +92,8 @@ export const HomeScreen = () => {
                     value={searchValue}
                     onChangeText={setSearchValue}
                     placeholder={item}
-                    placeholderTextColor={Colors.gray}
-                    selectionColor={Colors.white}
+                    placeholderTextColor={appColors.gray}
+                    selectionColor={appColors.white}
                     keyboardAppearance="dark"
                   />
                 </KeyboardAvoidingView>
@@ -117,11 +121,11 @@ export const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.primaryLight,
+    backgroundColor: appColors.primaryLight,
   },
   input: {
-    ...AppStyles.input,
-    marginHorizontal: AppStyles.containerPadding,
+    ...appInputStyle,
+    marginHorizontal: appStylesMeasures.containerPadding,
     marginTop: 35,
   },
   trainingContainer: {

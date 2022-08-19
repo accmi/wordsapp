@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
 import dayjs from 'dayjs';
-import { AppStyles } from '../../../config/appStyles';
-import { Colors } from '../../../config/colors';
-import { View, Text } from '../../../shared/flexbox';
-import { Measures } from '../../../utils/measures';
+import { View, Text } from '~shared';
+import { getWidthPercantage, getHeightPercantage } from '~utils';
+
+import { appColors, appStylesMeasures } from '~config';
 
 const mockChartData = [
   {
@@ -39,20 +39,20 @@ const getChartMonth = (date: Date) => {
   return dayjs(date).format('MMM');
 };
 export const ChartComponent = () => {
-  const chartMonthHeight = useRef(Measures.getHeightPercantage(0.2));
-  const chartMonthWidth = useRef(Measures.getWidthPercantage(0.05));
+  const chartMonthHeight = useRef(getHeightPercantage(0.2));
+  const chartMonthWidth = useRef(getWidthPercantage(0.05));
   const getCmpletionHigh = (complition: number) =>
     (chartMonthHeight.current * complition) / 100;
 
   return (
     <View
       flexDirection="row"
-      marginHorizontal={AppStyles.containerPadding}
-      padding={AppStyles.containerPadding}
+      marginHorizontal={appStylesMeasures.containerPadding}
+      padding={appStylesMeasures.containerPadding}
       marginTop={15}
       justifyContent="space-between"
-      backgroundColor={Colors.primaryRegular}
-      borderRadius={AppStyles.borderRadius}
+      backgroundColor={appColors.primaryRegular}
+      borderRadius={appStylesMeasures.borderRadius}
       elevation={4}
       shadowColor="#000"
       shadowOffset={{ width: 0.5, height: 0.5 }}
@@ -64,18 +64,18 @@ export const ChartComponent = () => {
             position="relative"
             height={chartMonthHeight.current}
             width={chartMonthWidth.current}
-            borderRadius={AppStyles.borderRadius}
-            backgroundColor={Colors.primaryDark}>
+            borderRadius={appStylesMeasures.borderRadius}
+            backgroundColor={appColors.primaryDark}>
             <View
               position="absolute"
-              backgroundColor={Colors.redRegular}
+              backgroundColor={appColors.redRegular}
               height={getCmpletionHigh(item.complition)}
               width={chartMonthWidth.current}
               bottom={0}
-              borderRadius={AppStyles.borderRadius}
+              borderRadius={appStylesMeasures.borderRadius}
             />
           </View>
-          <Text color={Colors.white}>{getChartMonth(item.date)}</Text>
+          <Text color={appColors.white}>{getChartMonth(item.date)}</Text>
         </View>
       ))}
     </View>
