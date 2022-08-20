@@ -65,7 +65,7 @@ export const HomeScreen = () => {
                 <View
                   marginTop={55}
                   marginHorizontal={appStylesMeasures.containerPadding}>
-                  <Text color={appColors.white} fontSize={appStyles.h1}>
+                  <Text color={appColors.white} fontSize={appStyles.h4}>
                     Progress
                   </Text>
                 </View>
@@ -75,7 +75,7 @@ export const HomeScreen = () => {
                 <View
                   marginTop={55}
                   marginHorizontal={appStylesMeasures.containerPadding}>
-                  <Text color={appColors.white} fontSize={appStyles.h1}>
+                  <Text color={appColors.white} fontSize={appStyles.h4}>
                     Training
                   </Text>
                 </View>

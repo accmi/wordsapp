@@ -1,7 +1,7 @@
 import React from 'react';
-import { appStyles } from '../../config/appStyles';
-import { appColors } from '../../config/colors';
-import { Text, View } from '../../shared/flexbox';
+import { appStyles } from '~config';
+import { appColors } from '~config';
+import { Text, View } from '~shared';
 
 export const ProfileScreen = () => (
   <View

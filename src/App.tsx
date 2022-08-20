@@ -4,8 +4,8 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { appColors, Screens } from './config';
 import { HomeScreen, ProfileScreen, CollectionsScreen } from './features';
-import { AppTabBar } from './shared/tabbar';
-import { AppHeader } from './shared/appHeader';
+import { AppTabBar } from './shared/components/tabbar';
+import { AppHeader } from './shared/components/appHeader';
 import HomeIcon from './assets/icons/home.icon.svg';
 import { StatusBar } from 'react-native';
 
@@ -31,7 +31,7 @@ export const App = () => {
             options={{
               tabBarActiveTintColor: appColors.tint,
               tabBarIcon: ({ color, size }) => (
-                <HomeIcon width={size} height={size} style={{ color }} />
+                <HomeIcon width={size} height={size} color={color} />
               ),
               tabBarShowLabel: false,
             }}
